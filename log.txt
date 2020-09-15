@@ -1,0 +1,56 @@
+INFO 2020-09-15 10:42:16,536 autoreload Watching for file changes with StatReloader
+INFO 2020-09-15 10:45:51,225 autoreload Watching for file changes with StatReloader
+INFO 2020-09-15 10:46:01,427 autoreload Watching for file changes with StatReloader
+INFO 2020-09-15 11:14:37,348 autoreload Watching for file changes with StatReloader
+WARNING 2020-09-15 11:14:41,601 log Not Found: /main//api-token-auth/
+WARNING 2020-09-15 11:14:53,421 log Not Found: /main//api-token-auth/
+WARNING 2020-09-15 11:15:04,794 log Not Found: /main//api-token-auth/
+INFO 2020-09-15 11:16:02,653 autoreload /home/vlasovalexs/Documents/Projects/Relaed-Fields-API/rfa/settings.py changed, reloading.
+INFO 2020-09-15 11:16:02,970 autoreload Watching for file changes with StatReloader
+ERROR 2020-09-15 11:16:41,763 log Internal Server Error: /main/upload/
+Traceback (most recent call last):
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/viewsets.py", line 114, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/vlasovalexs/Documents/Projects/Relaed-Fields-API/main/views.py", line 15, in upload_records
+    seriazlizer.is_valid(raise_exception=True)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/serializers.py", line 740, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/serializers.py", line 621, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/serializers.py", line 657, in to_internal_value
+    validated = self.child.run_validation(item)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/serializers.py", line 433, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/serializers.py", line 486, in to_internal_value
+    for field in fields:
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/serializers.py", line 369, in _writable_fields
+    for field in self.fields.values():
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/serializers.py", line 363, in fields
+    for key, value in self.get_fields().items():
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/serializers.py", line 1038, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/home/vlasovalexs/.virtualenvs/Relaed-Fields-API/lib/python3.8/site-packages/rest_framework/serializers.py", line 1110, in get_field_names
+    assert not (fields is None and exclude is None), (
+AssertionError: ("Creating a ModelSerializer without either the 'fields' attribute or the 'exclude' attribute has been deprecated since 3.3.0, and is now disallowed. Add an explicit fields = '__all__' to the MainTableSerializer serializer.",)
+INFO 2020-09-15 11:19:33,068 autoreload /home/vlasovalexs/Documents/Projects/Relaed-Fields-API/main/serializers.py changed, reloading.
+INFO 2020-09-15 11:19:33,394 autoreload Watching for file changes with StatReloader
+INFO 2020-09-15 11:19:57,265 autoreload /home/vlasovalexs/Documents/Projects/Relaed-Fields-API/main/serializers.py changed, reloading.
+INFO 2020-09-15 11:19:57,609 autoreload Watching for file changes with StatReloader
+WARNING 2020-09-15 11:20:02,076 log Bad Request: /main/upload/
+WARNING 2020-09-15 11:20:39,262 log Bad Request: /main/upload/
