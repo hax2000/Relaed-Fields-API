@@ -16,6 +16,18 @@ class MainTableRelatedFields(serializers.RelatedField):
 class MainTableSerializerList(serializers.ListSerializer):
 
     def create(self, validated_data):
+        r3_cache = {r3['name']: r3['id'] for r3 in list(RelatedField3.objects.all().values('name', 'id'))}
+        r2_cache = {r2['name']: r2['id'] for r2 in list(RelatedField2.objects.all().values('name', 'id'))}
+        r1_cache = {r1['name']: r1['id'] for r1 in list(RelatedField1.objects.all().values('name', 'id'))}
+
+        data_objects = []
+        for data in validated_data:
+            data['relfield3_id'] = r3_cache.get(data['relfield3'])
+            data['relfield2_id'] = r2_cache.get(data['relfield2'])
+            data['relfield1_id'] = r1_cache.get(data['relfield1'])
+            del data['relfield1_id'], data['relfield2_id'], data['relfield3_id']
+            data_objects.append(MainTable(**data))
+
         records = [MainTable(**item) for item in validated_data]
         return self.child.Meta.model.objects.bulk_create(records)
 
